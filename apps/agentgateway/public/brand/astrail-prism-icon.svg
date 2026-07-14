@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Astrail icon — Prism Rail</title>
+  <desc>A standalone mark: a rounded prism with negative-space rails merging into one endpoint.</desc>
+  <defs>
+    <linearGradient id="endpoint" x1="224" y1="132" x2="288" y2="196" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded prism body -->
+  <path d="M256 62
+           C273 62 288 71 297 87
+           L431 324
+           C453 363 425 411 380 411
+           H132
+           C87 411 59 363 81 324
+           L215 87
+           C224 71 239 62 256 62Z"
+        fill="#09090B"/>
+
+  <!-- Negative-space rails: many inputs -> one agent-ready endpoint -->
+  <path d="M160 340 C207 340 232 315 256 276"
+        stroke="#FFFFFF" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M352 340 C305 340 280 315 256 276"
+        stroke="#FFFFFF" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 276 V170"
+        stroke="#FFFFFF" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Endpoint -->
+  <circle cx="256" cy="170" r="32" fill="url(#endpoint)"/>
+</svg>

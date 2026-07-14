@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: 240 20% 98%;
+  --foreground: 240 9% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 9% 9%;
+  --muted: 240 11% 94%;
+  --muted-foreground: 240 4% 43%;
+  --primary: 24 95% 53%;
+  --primary-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 9% 88%;
+  --input: 240 9% 86%;
+  --ring: 24 95% 53%;
+  --radius: 0.625rem;
+}
+
+body {
+  font-family: var(--font-geist-mono), "SF Mono", "Roboto Mono", "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold;
+    letter-spacing: 0;
+    font-family: var(--font-geist-mono), "SF Mono", "Roboto Mono", "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+  }
+
+  code,
+  pre,
+  kbd,
+  .font-mono,
+  .font-pixel {
+    font-family: var(--font-geist-mono), "SF Mono", "Roboto Mono", "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+  }
+}
+
+@layer utilities {
+  .pixel-text {
+    font-family: var(--font-geist-mono), "SF Mono", "Roboto Mono", "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.32);
+  }
+
+  .crt-scan {
+    background-image: linear-gradient(transparent 0, rgba(255, 255, 255, 0.035) 1px, transparent 2px);
+    background-size: 100% 5px;
+  }
+}
+
+@layer components {
+  .console-card {
+    @apply min-w-0 rounded-lg border border-neutral-200 bg-white shadow-sm;
+  }
+
+  .console-card-dark {
+    @apply min-w-0 rounded-lg border border-white/10 bg-white/[0.04] shadow-sm;
+  }
+
+  .metric-number {
+    @apply font-mono text-2xl font-semibold tracking-normal text-neutral-950;
+  }
+}
