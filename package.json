@@ -50,8 +50,8 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@emnapi/core": "1.11.1",
-    "@emnapi/runtime": "1.11.1",
+    "@emnapi/core": "1.11.2",
+    "@emnapi/runtime": "1.11.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
