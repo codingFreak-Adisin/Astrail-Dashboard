@@ -1,0 +1,22 @@
+name: Astrail schema watch
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detect upstream schema drift
+        env:
+          ASTRAIL_SCHEMA_WATCH_SECRET: ${{ secrets.ASTRAIL_SCHEMA_WATCH_SECRET }}
+        run: |
+          test -n "$ASTRAIL_SCHEMA_WATCH_SECRET"
+          curl --fail-with-body --silent --show-error \
+            -H "Authorization: Bearer $ASTRAIL_SCHEMA_WATCH_SECRET" \
+            https://www.astrail.dev/api/cron/schema-watch
